@@ -174,8 +174,10 @@ const classes = [
 
 //CODE HERE
 for(let i = 0; i < classes.length; i++){
-    for(let prop in classes){   
-        classes[i][prop] = false;
+    for(let prop in classes[i]){
+        if(classes[i][prop] === true) {
+            classes[i][prop] = false;
+        } 
 }
 }
 
@@ -204,14 +206,13 @@ let pairsArray = []
 
 //CODE HERE
 // const finder = arr1 =>{
-//     for(let i = 0; i < arr1.length; i++){
-//       for(let j = i + 1; j < arr1.length; j++){
-//         if(arr1[i] === arr1[j]){
-//           indexArr = ([indexOf(arr1[i]), indexOf(arr1[j])]);
-//           pairsArray.push(indexArr)
-//         }
-//       }
-//     }
+    for(let i = 0; i < lettersToPair.length; i++){
+      for(let j = lettersToPair.length; j > i; j--){
+        if(lettersToPair[i] === lettersToPair[j]) {
+          pairsArray.push([i, j])
+        }
+      }
+    }
 //   }
   
 //   finder(lettersToPair)
